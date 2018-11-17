@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <view>微信基础库版本：{{ version }}</view>
+  <view>商户号：{{ mchId }}</view>
+  <view>支付金额：{{ totalFee }} 分</view>
+  <view>订单标题：{{ body }}</view>
+  <view>随机数：{{ nonce }}</view>
+  <view>{{ outTradeNo }}</view>
+  <button bindtap="bindPay">发起支付</button>
+  <block wx:if="{{ jump }}">
+    <view>支付结果</view>
+    <view>result_code: {{ resultCode }}</view>
+    <view>msg: {{ msg }}</view>
+    <view>{{ payjsOrderId }}</view>
+  </block>
+</view>
