@@ -26,7 +26,7 @@ Page({
       notifyUrl: this.data.notifyUrl,
       attach: this.data.attach,
       nonce: this.data.nonce,
-      sign: null // 测试阶段无需 sign
+      sign: null // 签名
     }
 
     console.log(extraData)
@@ -35,7 +35,7 @@ Page({
       appId: 'wx959c8c1fb2d877b5',
       path: 'pages/pay',
       extraData: extraData,
-      envVersion: 'trial', //体验版
+      // envVersion: 'trial', //体验版
       success: r => {
         console.log(r)
         console.log('等待返回')
