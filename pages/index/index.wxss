@@ -1,0 +1,27 @@
+.container {
+  padding: 150rpx 20rpx;
+}
+
+.row {
+  font-size: 30rpx;
+  line-height: 1.8;
+  color: #888888;
+}
+
+.button {
+  position: fixed;
+  top: 50vh;
+  left: 275rpx;
+  width: 200rpx;
+
+  border: solid 1px #1AAD19;
+  color: #1AAD19;
+  border-radius: 10rpx;
+
+  font-size: 32rpx;
+}
+
+.button.button-refresh {
+  left: 225rpx;
+  width: 300rpx;
+}

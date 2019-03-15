@@ -12,7 +12,7 @@
 		"uglifyFileName": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.3.0",
+	"libVersion": "2.4.0",
 	"appid": "wx70688e9c6ca4264b",
 	"projectname": "PAYJS%E6%94%AF%E4%BB%98%E6%B5%8B%E8%AF%95",
 	"debugOptions": {

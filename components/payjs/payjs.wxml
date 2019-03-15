@@ -1,0 +1,5 @@
+<view class="bg" catchtap="onTapCancel"></view>
+<view wx:if="{{ showPayModal }}" class="modal">
+  <view class="content">支付需要跳转到第三方平台进行</view>
+  <navigator class="button" target="miniProgram" app-id="wx959c8c1fb2d877b5" path="pages/pay" extra-data="{{ params }}" version="{{ envVersion }}" bindsuccess="navigateSuccess" bindfail="navigateFail">确认跳转</navigator>
+</view>

@@ -1,16 +1,45 @@
 <!--index.wxml-->
 <view class="container">
-  <view>微信基础库版本：{{ version }}</view>
-  <view>商户号：{{ mchId }}</view>
-  <view>支付金额：{{ totalFee }} 分</view>
-  <view>订单标题：{{ body }}</view>
-  <view>随机数：{{ nonce }}</view>
-  <view>{{ outTradeNo }}</view>
-  <button bindtap="bindPay">发起支付</button>
-  <block wx:if="{{ jump }}">
-    <view>支付结果</view>
-    <view>result_code: {{ resultCode }}</view>
-    <view>msg: {{ msg }}</view>
-    <view>{{ payjsOrderId }}</view>
-  </block>
+  
+  <view class="row">
+    <view class="left">订单标题</view>
+    <view>{{ orderParams.body }}</view>
+  </view>
+  <view class="row">
+    <view class="left">支付金额</view>
+    <view>{{ orderParams.total_fee / 100 }} 元</view>
+  </view>
+  <view class="row">
+    <view class="left">订单号</view>
+    <view>{{ orderParams.out_trade_no }}</view>
+  </view>
+  <view class="hr"></view>
+  <view class="row">
+    <view class="left">生成订单使用的随机数</view>
+    <view>{{ orderParams.nonce }}</view>
+  </view>
+  <view class="row">
+    <view class="left">异步通知地址</view>
+    <view>{{ orderParams.notify_url || '无' }}</view>
+  </view>
+  <view class="row">
+    <view class="left">异步通知数据</view>
+    <view>{{ orderParams.attach ? '有' : '无' }}</view>
+  </view>
+
+  <button wx:if="{{ !needRefreshOrderParams }}" class="button" bindtap="onTapPay">发起支付</button>
+  <view wx:else>
+    <view class="hr"></view>
+    <view class="row">
+      <view class="left">支付状态</view>
+      <view>支付成功</view>
+    </view>
+    <view class="row">
+      <view class="left">PAYJS 订单号</view>
+      <view>{{ orderResults.payjsOrderId }}</view>
+    </view>
+    <button class="button button-refresh" bindtap="onTapRefresh">刷新订单信息</button>
+  </view>
 </view>
+
+<payjs wx:if="{{ preparePay }}" params="{{ orderParams }}" bindsuccess="bindPaySuccess" bindfail="bindPayFail" bindcomplete="bindPayComplete" bind:dataChange="bindDataChange"/>

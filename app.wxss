@@ -1,10 +1,23 @@
-/**app.wxss**/
-.container {
-  height: 100%;
+button {
+  background: none;
+}
+
+button::after {
+  border: none;
+}
+
+.row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-} 
+}
+
+.row .left {
+  flex-grow: 1;
+}
+
+.hr {
+  height: 0;
+  border-top: solid 1px #d9d9d9;
+  margin: 20rpx 0;
+}

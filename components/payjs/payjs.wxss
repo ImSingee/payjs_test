@@ -1,0 +1,44 @@
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: black;
+  opacity: 0.5;
+}
+
+.button {
+  background: none;
+}
+
+.button::after {
+  border: none;
+}
+
+.modal {
+  position: fixed;
+  left: 10vw;
+  top: 30vh;
+  width: 80vw;
+  height: 20vh;
+
+  background-color: white;
+  border-radius: 5rpx;
+
+  text-align: center;
+  line-height: 10vh;
+}
+
+.modal .content {
+  height: 10vh;
+  color: #9d9d9d;
+  font-size: 28rpx;
+}
+
+.modal .button {
+  height: 10vh;
+  color: #3cc51f;
+  font-size: 36rpx;
+}
