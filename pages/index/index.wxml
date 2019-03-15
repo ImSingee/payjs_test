@@ -38,7 +38,7 @@
       <view class="left">PAYJS 订单号</view>
       <view>{{ orderResults.payjsOrderId }}</view>
     </view>
-    <button class="button button-refresh" bindtap="onTapRefresh">刷新订单信息</button>
+    <button class="button button-refresh" bindtap="onTapRefresh">生成新订单</button>
   </view>
 </view>
 
