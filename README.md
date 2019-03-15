@@ -1,5 +1,8 @@
 # PAYJS 小程序支付框架与示例
 
+本示例采用了框架 + 示例调用的形式，用于使用 [PAYJS](https://payjs.cn/ref/WDQGQD) 的小程序支付
+
+注：根据微信规范，iOS 系统上不能使用虚拟支付
 注：最低基础库为 2.4.0，请注意修改小程序后台设置中的最低基础库版本和开发者工具中的调试基础库版本
 
 ## 测试
@@ -75,9 +78,9 @@ preparePay 用于控制 payjs 支付组件的创建与销毁
 /**
   * 支付成功的事件处理函数
   * 
-  * res.detail 为 payjs 小程序返回的订单信息
+  * res.detail 为 PAYJS 小程序返回的订单信息
   * 
-  * 可通过 res.detail.payjsOrderId 拿到 payjs 订单号
+  * 可通过 res.detail.payjsOrderId 拿到 PAYJS 订单号
   * 可通过 res.detail.responseData 拿到详细支付信息
   */
 bindPaySuccess (res) {
@@ -119,7 +122,7 @@ bindPayFail (res) {
 bindPayComplete () {
   console.log('complete')
   this.setData({
-    preparePay: false, // 销毁 PAYJS 组件
+    preparePay: false, // 销毁 payjs 组件
   })
 },
 /**
